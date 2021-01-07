@@ -1,4 +1,5 @@
 const fs = require('fs');
+const eloHandler = require('./../modules/updateELO.js');
 const ChessWebAPI = require('chess-web-api');
 const chess = new ChessWebAPI();
 
@@ -28,6 +29,7 @@ module.exports = {
                 fs.writeFile('./data/users.json', JSON.stringify(userJSON, null, 4), err => { if(err) { throw err; } });
                 message.channel.send(`Chess.com user for <@!${message.author.id}> set to \`${args[0]}\``);
                 message.delete();
+                eloHandler.updateELO();
             }
         }
         catch(e) {
