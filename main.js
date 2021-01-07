@@ -17,6 +17,12 @@ for(const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('Bot Online');
+    client.user.setPresence({
+        activity: {
+            name: `c.help`,
+            type: 'PLAYING'
+        }
+    });
     eloHandler.updateELO(client);
     setInterval(eloHandler.updateELO, 900000, client);
 });
