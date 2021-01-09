@@ -19,12 +19,12 @@ client.once('ready', () => {
     console.log('Bot Online');
     client.user.setPresence({
         activity: {
-            name: `c.help`,
+            name: `Chess | c.help`,
             type: 'PLAYING'
         }
     });
     eloHandler.updateELO(client);
-    setInterval(eloHandler.updateELO, 900000, client);
+    setInterval(eloHandler.updateELO, 600000, client);
 });
 
 client.on('message', message => {
