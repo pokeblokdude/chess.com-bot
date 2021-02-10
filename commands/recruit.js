@@ -47,7 +47,7 @@ module.exports = {
                     });
                     let newEmbed = new MessageEmbed()
                         .setAuthor((member.nickname || user.username), user.displayAvatarURL())
-                        .setTitle(`${obj.title}` + (maxPeople ? ` (${obj.recruitees.length}/${maxPeople})` : ''))
+                        .setTitle(`${obj.title}` + (maxPeople ? ` (${obj.recruitees.length}/${maxPeople})` : ` (${obj.recruitees.length}/x)`))
                         .setDescription(str + '\n')
                         .setTimestamp(embed.timestamp);
                     msg.edit(newEmbed);
@@ -63,7 +63,7 @@ module.exports = {
                     });
                     let newEmbed = new MessageEmbed()
                         .setAuthor((member.nickname || user.username), user.displayAvatarURL())
-                        .setTitle(`${obj.title}` + (maxPeople ? ` (${obj.recruitees.length}/${maxPeople})` : ''))
+                        .setTitle(`${obj.title}` + (maxPeople ? ` (${obj.recruitees.length}/${maxPeople})` : ` (${obj.recruitees.length}/x)`))
                         .setDescription(str + '\n')
                         .setTimestamp(embed.timestamp);
                     msg.edit(newEmbed);
